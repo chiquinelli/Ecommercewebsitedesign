@@ -12,10 +12,29 @@ export function ProductsPage() {
   const [sortBy, setSortBy] = useState<string>('popular');
   const [showFilters, setShowFilters] = useState(false);
 
-  // Get unique values for filters
-  const categories = ['all', ...new Set(products.map(p => p.category))];
-  const brands = ['all', ...new Set(products.map(p => p.brand))];
-  const sizes = ['all', ...new Set(products.flatMap(p => p.size))];
+  // Translation mappings
+  const translateCategory = (cat: string) => {
+    const translations: { [key: string]: string } = {
+      'all': 'Todos',
+      'Sport Wheels': 'Rodas Esportivas',
+      'SUV Wheels': 'Rodas para SUV'
+    };
+    return translations[cat] || cat;
+  };
+
+  const translateBrand = (brand: string) => {
+    const translations: { [key: string]: string } = {
+      'all': 'Todos',
+      'Racing Pro': 'Racing Pro',
+      'Elite Motors': 'Elite Motors',
+      'Chrome Master': 'Chrome Master'
+    };
+    return translations[brand] || brand;
+  };
+
+  const translateSize = (size: string) => {
+    return size === 'all' ? 'Todos' : size;
+  };
 
   // Filter products
   let filteredProducts = products.filter(product => {
@@ -41,6 +60,10 @@ export function ProductsPage() {
     }
   });
 
+  const categories = ['all', ...new Set(products.map(p => p.category))];
+  const brands = ['all', ...new Set(products.map(p => p.brand))];
+  const sizes = ['all', ...new Set(products.flatMap(p => p.size))];
+
   const FilterSidebar = () => (
     <div className="space-y-6">
       {/* Category Filter */}
@@ -57,7 +80,7 @@ export function ProductsPage() {
                 className="w-4 h-4 text-[#dc2626] border-gray-600 focus:ring-[#dc2626] bg-[#1a1a1a]"
               />
               <span className="text-gray-400 group-hover:text-white transition-colors capitalize">
-                {category}
+                {translateCategory(category)}
               </span>
             </label>
           ))}
@@ -78,7 +101,7 @@ export function ProductsPage() {
                 className="w-4 h-4 text-[#dc2626] border-gray-600 focus:ring-[#dc2626] bg-[#1a1a1a]"
               />
               <span className="text-gray-400 group-hover:text-white transition-colors capitalize">
-                {brand}
+                {translateBrand(brand)}
               </span>
             </label>
           ))}
@@ -99,7 +122,7 @@ export function ProductsPage() {
                 className="w-4 h-4 text-[#dc2626] border-gray-600 focus:ring-[#dc2626] bg-[#1a1a1a]"
               />
               <span className="text-gray-400 group-hover:text-white transition-colors capitalize">
-                {size}
+                {translateSize(size)}
               </span>
             </label>
           ))}
@@ -120,8 +143,8 @@ export function ProductsPage() {
             className="w-full accent-[#dc2626]"
           />
           <div className="flex justify-between text-gray-400 text-sm">
-            <span>${priceRange[0]}</span>
-            <span>${priceRange[1]}</span>
+            <span>R${priceRange[0]}</span>
+            <span>R${priceRange[1]}</span>
           </div>
         </div>
       </div>

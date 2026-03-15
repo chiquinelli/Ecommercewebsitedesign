@@ -30,9 +30,6 @@ export function Header() {
             <a href="#categories" className="text-white hover:text-[#dc2626] transition-colors">
               {strings.header.categories}
             </a>
-            <a href="#contact" className="text-white hover:text-[#dc2626] transition-colors">
-              {strings.header.contact}
-            </a>
           </nav>
 
           {/* Search and Cart */}
@@ -87,17 +84,6 @@ export function Header() {
             >
               {strings.header.categories}
             </a>
-            <a
-              href="#contact"
-              className="block text-white hover:text-[#dc2626] transition-colors py-2"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {strings.header.contact}
-            </a>
-            <button className="w-full flex items-center space-x-2 px-4 py-2 bg-[#1a1a1a] rounded-md text-white hover:bg-[#262626] transition-colors">
-              <Search className="w-4 h-4" />
-              <span className="text-sm">{strings.header.search}</span>
-            </button>
           </nav>
         </div>
       )}

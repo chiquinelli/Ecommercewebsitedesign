@@ -56,9 +56,10 @@ export const strings = {
     faq: "FAQ",
     warranty: "Garantia",
     contactUs: "Entre em Contato",
-    address: "123 Rua do Automóvel, Cidade Performance, PC 12345",
-    phone: "+1 (555) 123-4567",
-    email: "info@fastrodas.com",
+    businessHours: "Atendimento: Seg à Sáb das 09:00 às 18:30",
+    address: "R. Epitácio Pessoa, 91 - Jardim Itapua, Itaquaquecetuba - SP, 08579-040",
+    phone: "(11) 94523-8994",
+    email: "fastrodasepneus@gmail.com",
     copyright: "© 2026 Fast Rodas. Todos os direitos reservados.",
     privacyPolicy: "Política de Privacidade",
     termsOfService: "Termos de Serviço"

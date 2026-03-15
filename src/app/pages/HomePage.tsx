@@ -115,7 +115,8 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Promotional Banner */}
+      {/* Promotional Banner - Commented out */}
+      {/*
       <section className="py-16 bg-gradient-to-r from-[#dc2626] to-[#991b1b]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -135,6 +136,7 @@ export function HomePage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Benefits Section */}
       <section className="py-16 bg-black">
